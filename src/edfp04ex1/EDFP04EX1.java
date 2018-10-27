@@ -15,7 +15,27 @@ public class EDFP04EX1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+      QueueADT<String> que=new LinkedQueue<>();
+      que.enqueue("A");
+      System.out.println(que.first());
+      que.enqueue("B");
+      System.out.println(que.first());
+      System.out.println(que.size());
+      System.out.println(que.toString());
+      que.enqueue("C");
+      que.enqueue("D");
+      System.out.println(que.toString());
+      
+       System.out.println(que.dequeue());
+       System.out.println(que.dequeue());
+      System.out.println(que.first());
+      System.out.println(que.toString());
+         
+      
+        
+        
+        
     }
     
 }
