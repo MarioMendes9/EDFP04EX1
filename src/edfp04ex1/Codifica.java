@@ -5,75 +5,64 @@
  */
 package edfp04ex1;
 
-
-
 /**
  *
  * @author User
  */
 public class Codifica {
-    
-    private LinkedQueue<String> mensageCod;
-    private LinkedQueue<Integer> key;
-    private LinkedQueue<String> mensageDesc;
-    public Codifica(LinkedQueue<String> mensageCod,LinkedQueue<Integer> key) {
-        this.mensageCod = mensageCod;
-        this.key = key;
-        this.mensageDesc=new LinkedQueue<>();
-    }
-    
-    public void traduzMessage(){
-        
-        while(!mensageDesc.isEmpty()){
-            
-            
-            char c=mensageDesc.dequeue().charAt(0);
-            int k=key.dequeue();
-        
-            int ch=(int)c;
-             ch=ch-k;
-                
- 
-            c=(char)ch;
-            String add=""+c;
-            mensageCod.enqueue(add);
-        }
-        }
-       
-    
-      
-   public void codifica(){
-        
-        while(!mensageCod.isEmpty()){
-            
-            
-            char c=mensageCod.dequeue().charAt(0);
-            int k=key.dequeue();
-        
-            int ch=(int)c;
-             ch=ch+k;
-               
-            
-            c=(char)ch;
-            String add=""+c;
-            mensageDesc.enqueue(add);
-        }
-        }
 
-    public LinkedQueue<String> getMensageCod() {
-        return mensageCod;
+    private LinkedQueue<String> mensageDesco;
+    private LinkedQueue<Integer> key;
+    private LinkedQueue<String> mensageCodif;
+
+    public Codifica(LinkedQueue<String> mensageCod, LinkedQueue<Integer> key) {
+        this.mensageDesco = mensageCod;
+        this.key = key;
+        this.mensageCodif = new LinkedQueue<>();
+    }
+
+    public void traduzMessage() {
+
+        while (!mensageCodif.isEmpty()) {
+
+            char c = mensageCodif.dequeue().charAt(0);
+            int k = key.dequeue();
+
+            int ch = (int) c;
+            ch = ch - k;
+
+            c = (char) ch;
+            String add = "" + c;
+            mensageDesco.enqueue(add);
+        }
+    }
+
+    public void codifica() {
+
+        while (!mensageDesco.isEmpty()) {
+
+            char c = mensageDesco.dequeue().charAt(0);
+            int k = key.dequeue();
+
+            int ch = (int) c;
+            ch = ch + k;
+
+            c = (char) ch;
+            String add = "" + c;
+            mensageCodif.enqueue(add);
+        }
+    }
+
+    public LinkedQueue<String> getMensageDesco() {
+        return mensageDesco;
     }
 
     public LinkedQueue<Integer> getKey() {
         return key;
     }
 
-    public LinkedQueue<String> getMensageDesc() {
-        return mensageDesc;
+    public LinkedQueue<String> getMensageCodif() {
+        return mensageCodif;
     }
-       
-    
-    
-    
-    
+
 }
